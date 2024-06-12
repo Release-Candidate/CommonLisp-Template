@@ -1,3 +1,4 @@
+# Lisp object files
 *.FASL
 *.fasl
 *.lisp-temp
@@ -15,3 +16,9 @@
 *.sx32fsl
 *.wx64fsl
 *.wx32fsl
+
+# ocicl files
+systems/
+
+# VS Code Alive extension
+.vscode/alive/
