@@ -20,5 +20,9 @@
 # ocicl files
 systems/
 
+
 # VS Code Alive extension
 .vscode/alive/
+
+# executable
+commonlisp-template

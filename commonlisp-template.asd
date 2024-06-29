@@ -13,9 +13,13 @@
   :version "0.1.0"
   :description "This is a project template for a Common Lisp system using ocicl as system manager."
   :serial t
+  :build-operation "program-op"
+  :build-pathname "../commonlisp-template"
+  :entry-point "commonlisp-template:main"
   :depends-on ()
   :pathname "src/"
-  :components ((:file "main"))
+  :components ((:file "package")
+               (:file "main"))
   :in-order-to ((test-op (test-op :commonlisp-template/test))))
 
 (asdf:defsystem #:commonlisp-template/test
@@ -24,7 +28,8 @@
   :version "0.1.0"
   :description "This contains the tests of the system `commonlisp-template`."
   :serial t
-  :depends-on ("commonlisp-template")
+  :depends-on ("commonlisp-template" "lisp-unit2" "parachute")
   :pathname "test/"
-  :components ((:file "main-test"))
+  :components ((:file "package")
+               (:file "main-test"))
   :perform (test-op (op system) (symbol-call :commonlisp-template/test :run-tests)))
