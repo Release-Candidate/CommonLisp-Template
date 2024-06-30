@@ -1,6 +1,6 @@
 # Common Lisp Project Template
 
-This is a template for a Common Lisp project using Ocicl for package management.
+This is a template for a Common Lisp project using Ocicl for package management, Lisp-Unit2 as testing framework and cl-check as property testing library.
 
 - [Lisp Systems (Packages) Used](#lisp-systems-packages-used)
 - [Usage](#usage)

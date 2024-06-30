@@ -41,7 +41,3 @@
           (setf a b)
           (setf b fib))
         fib)))
-
-; (mapcar #'fib-naive (list 1 2 3 4 5 6 7 8 9))
-; (mapcar #'fib-tail (list 1 2 3 4 5 6 7 8 9))
-; (mapcar #'fib-loop (list 1 2 3 4 5 6 7 8 9))
