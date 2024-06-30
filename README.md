@@ -13,6 +13,7 @@ This is a template for a Common Lisp project using Ocicl for package management,
 ## Lisp Systems (Packages) Used
 
 - [Ocicl](https://github.com/ocicl/ocicl) as system (package) manager
+- [Lisp-Unit2](https://github.com/AccelerationNet/lisp-unit2) as testing framework
 
 ## Usage
 
