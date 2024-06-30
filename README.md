@@ -7,6 +7,7 @@ This is a template for a Common Lisp project using Ocicl for package management,
   - [Downloading Systems](#downloading-systems)
   - [Running Tests](#running-tests)
   - [Generate the Executable](#generate-the-executable)
+- [Blog Posts About This Project](#blog-posts-about-this-project)
 - [License](#license)
 
 ## Lisp Systems (Packages) Used
@@ -56,6 +57,10 @@ or evaluate it on the command line, for example using SBCL:
 ```shell
 sbcl --non-interactive --eval '(asdf:make :commonlisp-template)'
 ```
+
+## Blog Posts About This Project
+
+- on choosing the testing framework: [Common Lisp Testing Frameworks: Lisp-Unit2 vs Parachute](https://release-candidate.mataroa.blog/blog/common-lisp-testing-frameworks/)
 
 ## License
 
