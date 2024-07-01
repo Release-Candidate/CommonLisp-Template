@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText:  Copyright 2024 Roland Csaszar
+# SPDX-License-Identifier: MIT
+#
+# Project:  CommonLisp-Template
+# File:     test.yml
+# Date:     01.Jul.2024
+#
+# ==============================================================================
+
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup SBCL
+        run: |
+          brew install sbcl
+
+      - name: Setup Ocicl
+        run: |
+          brew install ocicl
+
+      - name: Run Tests
+        run: |
+          sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
+
+
+  tests-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup SBCL
+        run: |
+          choco install sbcl
+
+      - name: Setup Ocicl
+        run: |
+          curl -L -O "https://github.com/ocicl/ocicl/archive/refs/tags/v2.3.7.zip"
+          7z x v2.3.7.zip
+          cd ocicl-2.3.7
+          sbcl --load setup.lisp
+          %UserProfile%\AppData\Local\ocicl\ocicl.exe setup
+
+      - name: Run Tests
+        run: |
+          sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
