@@ -100,5 +100,5 @@ jobs:
 
       - name: Run Tests
         run: |
-          set PATH=%PATH%;C:\Users\runneradmin\AppData\Local\ocicl\bin\
+          set "PATH=%PATH%;C:\Users\runneradmin\AppData\Local\ocicl\bin\"
           sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
