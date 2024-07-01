@@ -32,11 +32,25 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-      - name: Setup SBCL
+      - name: Setup SBCL Linux
+        if: runner.os == 'Linux'
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install sbcl
+
+      - name: Setup SBCL Linux
+        if: runner.os != 'Linux'
         run: |
           brew install sbcl
 
+      - name: Setup Ocicl Linux
+        if: runner.os == 'Linux'
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install ocicl
+
       - name: Setup Ocicl
+        if: runner.os != 'Linux'
         run: |
           brew install ocicl
 
