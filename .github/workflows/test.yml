@@ -95,7 +95,7 @@ jobs:
           7z x v2.3.7.zip
           cd ocicl-2.3.7
           sbcl --load setup.lisp
-          echo ^(require "asdf"^) >> C:\Users\runneradmin\.sbclrc
+          echo '(require "asdf")' >> C:\Users\runneradmin\.sbclrc
           C:\Users\runneradmin\AppData\Local\ocicl\bin\ocicl.exe setup >> C:\Users\runneradmin\.sbclrc
           # echo (require "asdf") >> C:\Users\runneradmin\.sbclrc
           # echo. #-ocicl >> C:\Users\runneradmin\.sbclrc
