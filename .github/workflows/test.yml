@@ -48,11 +48,15 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install ocicl
+          ocicl setup
+          echo (require "asdf") >> ~/.sbclrc
 
       - name: Setup Ocicl
         if: runner.os != 'Linux'
         run: |
           brew install ocicl
+          ocicl setup
+          echo (require "asdf") >> ~/.sbclrc
 
       - name: Run Tests
         run: |
