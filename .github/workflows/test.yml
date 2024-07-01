@@ -28,8 +28,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Add Homebrew to Linux PATH
+        if: runner.os == 'Linux'
         run: |
-          echo 'PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> $GITHUB_ENV
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
       - name: Setup SBCL
         run: |
