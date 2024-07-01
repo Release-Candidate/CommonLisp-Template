@@ -27,6 +27,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Add Homebrew to Linux PATH
+        run: |
+          echo 'PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> $GITHUB_ENV
+
       - name: Setup SBCL
         run: |
           brew install sbcl
@@ -57,7 +61,7 @@ jobs:
           7z x v2.3.7.zip
           cd ocicl-2.3.7
           sbcl --load setup.lisp
-          %UserProfile%\AppData\Local\ocicl\ocicl.exe setup
+          C:\Users\runneradmin\AppData\Local\ocicl\bin\ocicl.exe setup
 
       - name: Run Tests
         run: |
