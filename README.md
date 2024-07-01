@@ -14,6 +14,7 @@ This is a template for a Common Lisp project using Ocicl for package management,
 
 - [Ocicl](https://github.com/ocicl/ocicl) as system (package) manager
 - [Lisp-Unit2](https://github.com/AccelerationNet/lisp-unit2) as testing framework
+- []()
 
 ## Usage
 
@@ -62,6 +63,7 @@ sbcl --non-interactive --eval '(asdf:make :commonlisp-template)'
 ## Blog Posts About This Project
 
 - on choosing the testing framework: [Common Lisp Testing Frameworks: Lisp-Unit2 vs Parachute](https://release-candidate.mataroa.blog/blog/common-lisp-testing-frameworks/)
+- on using Check-It for property tests: [Common Lisp Property Testing: Check-it](https://release-candidate.mataroa.blog/blog/common-lisp-property-testing-check-it/)
 
 ## License
 

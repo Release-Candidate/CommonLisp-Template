@@ -28,7 +28,7 @@
   :version "0.1.0"
   :description "This contains the tests of the system `commonlisp-template`."
   :serial t
-  :depends-on ("commonlisp-template" "lisp-unit2")
+  :depends-on ("commonlisp-template" "lisp-unit2" "check-it")
   :pathname "test/"
   :components ((:file "package")
                (:file "main-test"))

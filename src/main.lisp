@@ -24,7 +24,7 @@
 (defun fib-tail (n)
   "Calculate the n-th fibonacci number, using a tail-recursive function."
   (labels ((go-func (i a b)
-                    (cond ((= i 0) a)
+                    (cond ((= i 0) b)
                           ((= i 1) b)
                           (t (go-func (- i 1) b (+ a b))))))
     (go-func n 0 1)))
