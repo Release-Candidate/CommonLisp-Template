@@ -27,11 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Add Homebrew to Linux PATH
-        if: runner.os == 'Linux'
-        run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
       - name: Setup SBCL Linux
         if: runner.os == 'Linux'
         run: |
@@ -105,4 +100,5 @@ jobs:
 
       - name: Run Tests
         run: |
+          set PATH=%PATH%;C:\Users\runneradmin\AppData\Local\ocicl\bin\
           sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
