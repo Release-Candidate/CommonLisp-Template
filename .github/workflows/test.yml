@@ -43,23 +43,23 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install ocicl
-          ocicl setup
           echo '(require "asdf")' >> ~/.sbclrc
-          echo '#-ocicl' >> ~/.sbclrc
-          echo '(when (probe-file #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
-          echo '(load #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
-          echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
+          ocicl setup >> ~/.sbclrc
+          # echo '#-ocicl' >> ~/.sbclrc
+          # echo '(when (probe-file #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
+          # echo '(load #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
+          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
 
       - name: Setup Ocicl
         if: runner.os != 'Linux'
         run: |
           brew install ocicl
-          ocicl setup
           echo '(require "asdf")' >> ~/.sbclrc
-          echo '#-ocicl' >> ~/.sbclrc
-          echo '(when (probe-file #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
-          echo '(load #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
-          echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
+          ocicl setup >> ~/.sbclrc
+          # echo '#-ocicl' >> ~/.sbclrc
+          # echo '(when (probe-file #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
+          # echo '(load #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
+          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
 
       - name: Run Tests Linux
         if: runner.os == 'Linux'
@@ -90,13 +90,12 @@ jobs:
           7z x v2.3.7.zip
           cd ocicl-2.3.7
           sbcl --load setup.lisp
-          C:\Users\runneradmin\AppData\Local\ocicl\bin\ocicl.exe setup
           echo '(require "asdf")' >> C:\Users\runneradmin\.sbclrc
-          echo '#-ocicl' >> C:\Users\runneradmin\.sbclrc
-          echo '(when (probe-file #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp")' >> C:\Users\runneradmin\.sbclrc
-          echo '(load #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp"))' >> C:\Users\runneradmin\.sbclrc
-          echo '(push (uiop:getcwd) asdf:*central-registry*)' >> C:\Users\runneradmin\.sbclrc
-          type C:\Users\runneradmin\.sbclrc
+          C:\Users\runneradmin\AppData\Local\ocicl\bin\ocicl.exe setup >> C:\Users\runneradmin\.sbclrc
+          # echo '#-ocicl' >> C:\Users\runneradmin\.sbclrc
+          # echo '(when (probe-file #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp")' >> C:\Users\runneradmin\.sbclrc
+          # echo '(load #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp"))' >> C:\Users\runneradmin\.sbclrc
+          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> C:\Users\runneradmin\.sbclrc
 
       - name: Run Tests
         run: |
