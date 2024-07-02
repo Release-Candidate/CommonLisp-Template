@@ -46,6 +46,12 @@ sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
 
 For the configuration of the test runner, see the definition of system `commonlisp-template/test` in file [./commonlisp-template.asd](./commonlisp-template.asd)
 
+To run tests in the terminal or in a CI, run `(commonlisp-template/test:run-tests-exit)` which quits the REPL with an exit code.
+
+```shell
+sbcl --non-interactive --eval '(asdf:load-system :commonlisp-template/test)'  --eval '(commonlisp-template/test:run-tests-exit)'
+```
+
 ### Generate the Executable
 
 The generate the executable `commonlisp-template` call `asdf:make` in a REPL:

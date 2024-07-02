@@ -34,5 +34,15 @@
 
 (defun run-tests ()
   "The main entry point of the tests. Run all tests."
-  (lisp-unit2:run-tests :package :commonlisp-template/test
-                        :run-contexts #'lisp-unit2:with-summary-context))
+  (let ((res (lisp-unit2:run-tests :package :commonlisp-template/test
+                                   :run-contexts #'lisp-unit2:with-summary-context)))
+    (let ((not-ok (or (lisp-unit2:failed res)
+                      (lisp-unit2:errors res)
+                      (lisp-unit2:warnings res))))
+      not-ok)))
+
+(defun run-tests-exit ()
+  "Run all tests and exit the REPL."
+  (if (run-tests)
+      (uiop:quit 1)
+      (uiop:quit)))

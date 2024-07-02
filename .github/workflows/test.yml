@@ -45,10 +45,6 @@ jobs:
           brew install ocicl
           echo '(require "asdf")' >> ~/.sbclrc
           ocicl setup >> ~/.sbclrc
-          # echo '#-ocicl' >> ~/.sbclrc
-          # echo '(when (probe-file #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
-          # echo '(load #P"/home/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
-          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
 
       - name: Setup Ocicl
         if: runner.os != 'Linux'
@@ -56,22 +52,17 @@ jobs:
           brew install ocicl
           echo '(require "asdf")' >> ~/.sbclrc
           ocicl setup >> ~/.sbclrc
-          # echo '#-ocicl' >> ~/.sbclrc
-          # echo '(when (probe-file #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp")' >> ~/.sbclrc
-          # echo '(load #P"/Users/runner/.local/share/ocicl/ocicl-runtime.lisp"))' >> ~/.sbclrc
-          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> ~/.sbclrc
 
       - name: Run Tests Linux
         if: runner.os == 'Linux'
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
+          sbcl --non-interactive --eval '(asdf:load-system :commonlisp-template/test)'  --eval '(commonlisp-template/test:run-tests-exit)'
 
       - name: Run Tests
         if: runner.os != 'Linux'
         run: |
-          sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
-
+          sbcl --non-interactive --eval '(asdf:load-system :commonlisp-template/test)'  --eval '(commonlisp-template/test:run-tests-exit)'
 
   tests-windows:
     runs-on: windows-latest
@@ -92,12 +83,8 @@ jobs:
           sbcl --load setup.lisp
           echo '(require "asdf")' >> C:\Users\runneradmin\.sbclrc
           C:\Users\runneradmin\AppData\Local\ocicl\bin\ocicl.exe setup >> C:\Users\runneradmin\.sbclrc
-          # echo '#-ocicl' >> C:\Users\runneradmin\.sbclrc
-          # echo '(when (probe-file #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp")' >> C:\Users\runneradmin\.sbclrc
-          # echo '(load #P"C:/Users/runneradmin/AppData/Local/ocicl/ocicl-runtime.lisp"))' >> C:\Users\runneradmin\.sbclrc
-          # echo '(push (uiop:getcwd) asdf:*central-registry*)' >> C:\Users\runneradmin\.sbclrc
 
       - name: Run Tests
         run: |
           $env:Path += ';C:\Users\runneradmin\AppData\Local\ocicl\bin\'
-          sbcl --non-interactive --eval '(asdf:test-system :commonlisp-template)'
+          sbcl --non-interactive --eval '(asdf:load-system :commonlisp-template/test)'  --eval '(commonlisp-template/test:run-tests-exit)'

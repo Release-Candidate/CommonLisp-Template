@@ -9,4 +9,4 @@
 
 (defpackage :commonlisp-template/test
   (:use :common-lisp)
-  (:export :run-tests))
+  (:export :run-tests :run-tests-exit))
