@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml/badge.svg)](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml)
 
-This is a template for a Common Lisp project using Ocicl for package management, Lisp-Unit2 as testing framework and cl-check as property testing library. Contains GitHub actions for Linux, MacOS and Windows in [./.github/workflows/test.yml](./.github/workflows/test.yml).
+This is a template for a Common Lisp project using Ocicl for package management, Lisp-Unit2 as testing framework and Check-It as property testing library. Contains GitHub actions for Linux, MacOS and Windows in [./.github/workflows/test.yml](./.github/workflows/test.yml).
 
 - [Lisp Systems (Packages) Used](#lisp-systems-packages-used)
 - [Usage](#usage)
