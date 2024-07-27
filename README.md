@@ -1,6 +1,9 @@
+> [!WARNING]
+> This repository has been moved to [Codeberg: Common Lisp Project Template](https://codeberg.org/Release-Candidate/CommonLisp-Template)
+
 # Common Lisp Project Template
 
-[![Test](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml/badge.svg)](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml)
+[![Test](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml/badge.svg)](https://github.com/Release-Candidate/CommonLisp-Template/actions/workflows/test.yml) <- this test is failing to check whether failing tests actually cause the workflow to fail
 
 This is a template for a Common Lisp project using Ocicl for package management, Lisp-Unit2 as testing framework and Check-It as property testing library. Contains GitHub actions for Linux, MacOS and Windows in [./.github/workflows/test.yml](./.github/workflows/test.yml).
 
