@@ -73,8 +73,8 @@ sbcl --non-interactive --eval '(asdf:make :commonlisp-template)'
 
 ## Blog Posts About This Project
 
-- on choosing the testing framework: [Common Lisp Testing Frameworks: Lisp-Unit2 vs Parachute](https://release-candidate.mataroa.blog/blog/common-lisp-testing-frameworks/)
-- on using Check-It for property tests: [Common Lisp Property Testing: Check-it](https://release-candidate.mataroa.blog/blog/common-lisp-property-testing-check-it/)
+- on choosing the testing framework: [Common Lisp Testing Frameworks: Lisp-Unit2 vs Parachute](https://release-candidate.codeberg.page/posts/2024-06-30-common-lisp-testing-frameworks.html)
+- on using Check-It for property tests: [Common Lisp Property Testing: Check-it](https://release-candidate.codeberg.page/posts/2024-07-01-common-lisp-property-testing-check-it.html)
 
 ## License
 
